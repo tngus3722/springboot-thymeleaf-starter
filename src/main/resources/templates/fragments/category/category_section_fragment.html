@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section th:fragment="category" >
+  <div th:each="category, idx : ${categories}" role="tab" >
+    <th:block th:text="${category.categoryName}"></th:block>
+    <br>
+    <section th:id="category.categoryId" role="controls">
+      <th:block th:each="category : ${category.childCategoryResponses}">
+        <th:block th:text="'&nbsp;&nbsp;&nbsp;&nbsp;' + ${category.categoryName}"></th:block>
+      </th:block>
+    </section>
+  </div>
+</section>
+</body>
+</html>
