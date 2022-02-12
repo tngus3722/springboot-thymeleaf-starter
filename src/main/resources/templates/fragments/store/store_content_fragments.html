@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section th:fragment="productList">
+  <th:block th:each="product, idx : ${cursor.response}">
+    <th:block th:text="'번호 ' + ${idx.count}"></th:block>
+    <br>
+    <th:block th:text="'상품번호 ' + ${product.productId}"></th:block>
+    <br>
+    <th:block th:text="'상품이름 ' +  ${product.productName}"></th:block>
+    <br>
+    <th:block th:text="'상품가격 ' +  ${product.productPrice}"></th:block>
+    <br>
+    <th:block th:text="'싱품재고 ' + ${product.productRemains}"></th:block>
+    <br>
+    <br>
+  </th:block>
+</section>
+</body>
+</html>
