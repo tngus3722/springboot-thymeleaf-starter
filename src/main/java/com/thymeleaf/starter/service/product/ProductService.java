@@ -9,11 +9,12 @@ import com.thymeleaf.starter.entity.product.ProductEntity;
 public interface ProductService {
 
     BaseCursorResponse<ProductResponse> getProducts(CursorCriteria cursorCriteria);
-    
 
     ProductEntity getLockedProductEntityById(Long productId);
 
     ProductResponse putProduct(Long productId, ProductRequest productRequest);
 
     ProductEntity getProductEntityById(Long productId);
+
+    ProductResponse getProduct(Long productId);
 }

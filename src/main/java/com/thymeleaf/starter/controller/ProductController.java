@@ -41,6 +41,13 @@ public class ProductController {
         return modelAndView;
     }
 
+    @GetMapping("/{productId}")
+    public ModelAndView getProduct(@PathVariable Long productId) {
+        ModelAndView modelAndView = new ModelAndView("store/detail");
+        modelAndView.addObject("product", productService.getProduct(productId));
+        return modelAndView;
+    }
+
     @PutMapping("/{productId}")
     public ResponseEntity<ProductResponse> putProducts(@PathVariable("productId") Long productId,
             @RequestBody @Validated(ValidationGroup.Update.class) ProductRequest productRequest) {

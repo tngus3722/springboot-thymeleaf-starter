@@ -10,7 +10,7 @@
   <th:block th:each="product, idx : ${cursor.response}">
     <th:block th:text="'번호 ' + ${idx.count}"></th:block>
     <br>
-    <th:block th:text="'상품번호 ' + ${product.productId}"></th:block>
+    <a th:href="'product/' +${product.productId}" th:text="'상품번호 ' + ${product.productId}"></a>
     <br>
     <th:block th:text="'상품이름 ' +  ${product.productName}"></th:block>
     <br>
@@ -20,6 +20,18 @@
     <br>
     <br>
   </th:block>
+</section>
+
+<section th:fragment="product">
+  <th:block th:text="'상품번호 ' + ${product.productId}"></th:block>
+  <br>
+  <th:block th:text="'상품이름 ' +  ${product.productName}"></th:block>
+  <br>
+  <th:block th:text="'상품가격 ' +  ${product.productPrice}"></th:block>
+  <br>
+  <th:block th:text="'싱품재고 ' + ${product.productRemains}"></th:block>
+  <br>
+  <br>
 </section>
 </body>
 </html>

@@ -42,6 +42,12 @@ public class ProductServiceImpl implements ProductService {
         return new BaseCursorResponse<ProductResponse>(productResponses, cursorCriteria, basePoint + "product");
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public ProductResponse getProduct(Long productId) {
+        return ProductMapper.INSTANCE.toProduct(this.getProductEntityById(productId));
+    }
+
     @Transactional
     @Override
     public ProductResponse putProduct(Long productId, ProductRequest productRequest) {
