@@ -5,7 +5,10 @@
   <title>Title</title>
 </head>
 <body>
+
 <section th:fragment="productList">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/static/js/store/store.js"></script>
   <th:block th:each="product, idx : ${cursor.response}">
     <th:block th:text="'번호 ' + ${idx.count}"></th:block>
     <br>
@@ -13,7 +16,9 @@
     <br>
     <th:block th:text="'상품이름 ' +  ${product.productName}"></th:block>
     <br>
-    <th:block th:text="'상품가격 ' +  ${product.productPrice}"></th:block>
+    <button class="product-price-button" th:data-price="${product.productPrice}">
+      가격 정보 보기
+    </button>
     <br>
     <th:block th:text="'싱품재고 ' + ${product.productRemains}"></th:block>
     <br>
