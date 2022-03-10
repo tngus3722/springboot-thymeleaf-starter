@@ -7,10 +7,10 @@
   <title></title>
 </head>
 <body>
-  <main layout:fragment="content">
-    <article th:if="${#lists.size(cursor.response)>0}">
-      <th:block th:replace="fragments/store/store_content_fragments :: productList"></th:block>
-    </article>
-  </main>
+<main layout:fragment="content">
+  <article th:if="${#lists.size(cursor.response)>0}">
+    <th:block th:replace="fragments/store/store_content_fragments :: productList"></th:block>
+  </article>
+</main>
 </body>
 </html>
