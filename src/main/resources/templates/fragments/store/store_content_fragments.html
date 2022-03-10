@@ -9,6 +9,11 @@
 <section th:fragment="productList">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="/static/js/store/store.js"></script>
+
+  <button class="filter--price" th:onclick="|location.href='/product?sortBy=productPrice'|">
+    가격 내림차순으로 보기
+  </button>
+  <br>
   <th:block th:each="product, idx : ${cursor.response}">
     <th:block th:text="'번호 ' + ${idx.count}"></th:block>
     <br>
